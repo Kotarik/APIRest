@@ -7,7 +7,7 @@ module.exports = function(app) {
 	app.post('/film', API.create_a_film);
 	app.get('/film', API.list_all_film);
 	
-	//app.get('/film/:filmId', API.read_a_film);
+	app.get('/film/:filmId', API.read_a_film);
 	app.post('/film/:filmId/commentaire', API.create_a_commentaire);
 	
 //  app.route('/film/:filmId')

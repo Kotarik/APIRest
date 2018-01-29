@@ -68,10 +68,10 @@ var port = process.env.MONGODB_ADDON_PORT;
 					response.json({ message: 'commentaire créé '});
 				});								
 			});
-		}
+		},
 		
 		
-		/** read_a_film: function(req, response)
+		read_a_film: function(req, response)
 		{
 			MongoClient.connect(url, function(err, back)
 			{
@@ -81,8 +81,7 @@ var port = process.env.MONGODB_ADDON_PORT;
 				
 				console.log("params.filmId");
 				console.log(req.params.filmId);
-				dbo.collection("films").findOne({_id: req.params.filmId}, function(err, film) {
-
+				dbo.collection("commentaires").find( { _id: ObjectId(req.params.filmId) }, function(err, film) {
 					console.log("film");
 					console.log(film);
 					if (err)
@@ -95,7 +94,7 @@ var port = process.env.MONGODB_ADDON_PORT;
 				});
 			});
 		}
-		**/
+		
 	
 	};
 	
