@@ -78,20 +78,34 @@ var port = process.env.MONGODB_ADDON_PORT;
 				if (err) throw err;
 				var dbo = back.db("API");
 				
-				
-				console.log("params.filmId");
-				console.log(req.params.filmId);
-				dbo.collection("commentaires").find( { _id: ObjectId(req.params.filmId) }, function(err, film) {
-					console.log("film");
-					console.log(film);
-					if (err)
-					{
-						response.send(err);
-						response.status(500);
+				try {
+						dbo.collection("films").findOne( {"_id": new Mongo.ObjectID(req.params.filmId) }, function(err, film) {
+							console.log("film");
+							console.log(film);
+							if (err)
+							{
+								response.send(err);
+								response.status(500);
+							} else 
+							{
+								if (film == null)
+								{
+									response.status(500);
+									response.send ("mauvais ID");
+									
+								} else {
+									response.status(200);
+									response.json(film);
+								
+								}
+							}
+						});
 					}
-					response.status(200);
-					response.json(film);
-				});
+					catch (err) 
+					{
+							response.send(err);
+							response.status(500);
+					}
 			});
 		}
 		

@@ -16,10 +16,10 @@ Les requettes fonctionnelles sont les suivantes :
 
 	post creation commentaire (les commentaires sont aux films par l'id du film)
 	url : 
-		http://localhost:3000/film/5a6dca582ac34d1e9ca6bc75/commentaire
+		http://localhost:3000/film/5a70aac060b2c0256c0ee117/commentaire
 	body : 
 		{
-		  "filmId": "5a6dca582ac34d1e9ca6bc75",
+		  "filmId": "5a70aac060b2c0256c0ee117",
 		  "text": "bonne critique"
 		}
 
@@ -27,4 +27,4 @@ Les requettes fonctionnelles sont les suivantes :
 La requette non fonctionelle : 
 	get film by id
 	url :
-		http://localhost:3000/film/5a6dca582ac34d1e9ca6bc75
+		http://localhost:3000/film/5a70aac060b2c0256c0ee117

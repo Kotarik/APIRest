@@ -6,7 +6,7 @@ var filmSchema = Schema({
   _id: Schema.Types.ObjectId,
   film: String,
   auteur: String,
-  commentaire: [{ type: Schema.Types.ObjectId, ref: 'Commentaire' }],
+ // commentaire: [{ type: Schema.Types.ObjectId, ref: 'Commentaire' }],
  // connection: [{ type: Schema.Types.ObjectId, ref: 'Connection' }]
 });
 
